@@ -13,9 +13,11 @@ main {
 
 .header {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   height: 65px;
-  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   color: white;
   padding: 20px;
 }
@@ -45,7 +47,7 @@ main {
 .form--input {
   font-family: "Karla", sans-serif;
   border-radius: 5px;
-  border: 1px solid #D5D4D8;
+  border: 1px solid #d5d4d8;
   text-indent: 5px;
 }
 
@@ -53,44 +55,42 @@ main {
   grid-column: 1 / -1;
   font-family: "Karla", sans-serif;
   border-radius: 5px;
-  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
   color: white;
   border: none;
   cursor: pointer;
 }
-
+.troll {
+  height: 8vh;
+}
 .meme {
   position: relative;
+  display: flex;
 }
 
 .meme--image {
-  max-width: 100%;
+  width: 40vw;
   border-radius: 3px;
+  margin-left: 25vw;
 }
 
 .meme--text {
   position: absolute;
-  width: 80%;
+  width: 55%;
   text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 80%;
+  transform: translateX(-75%);
   margin: 15px 0;
   padding: 0 5px;
   font-family: impact, sans-serif;
   font-size: 2em;
   text-transform: uppercase;
+  font-weight: 100;
   color: white;
   letter-spacing: 1px;
-  text-shadow:
-      2px 2px 0 #000,
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      0 2px 0 #000,
-      2px 0 0 #000,
-      0 -2px 0 #000,
-      -2px 0 0 #000,
-      2px 2px 5px #000;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
 }
 
 .bottom {
@@ -99,4 +99,46 @@ main {
 
 .top {
   top: 0;
+}
+
+/* medium devices */
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    height: 30vh;
+  }
+  .troll {
+    height: 15vh;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form--input {
+    height: 7vh;
+  }
+  .form--button {
+    height: 7vh;
+  }
+  .meme--image {
+    width: 80vw;
+    border-radius: 3px;
+    margin-left: 5vw;
+  }
+  .meme--text {
+    left: 60%;
+    font-size: 1.2em;
+    font-weight: 100;
+    width: 70%;
+  }
+}
+
+/* small devices */
+@media screen and (max-width: 583px) {
+  .meme--text {
+    left: 80%;
+    font-size: 1.2em;
+    font-weight: 100;
+    width: 90%;
+  }
 }
